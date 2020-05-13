@@ -20,9 +20,7 @@
         button {
             cursor: pointer;
             display: inline-block;
-            width: 40px;
-            height: 40px;
-            padding : 5px;
+            padding : 10px;
             background: #a1baff;
             border: none;;
             font-weight: bold;;
@@ -46,13 +44,13 @@
 </head>
 <body>
     <h1>산술연산 예제</h1>
-    <input type="number" id="num1" placeholder="숫자를 입력하세요!">
+    <input type="text" id="num1" placeholder="숫자를 입력하세요!">
     
     <span>+</span>
-    <input type="number" id="num2" placeholder="숫자를 입력하세요!">
+    <input type="text" id="num2" placeholder="숫자를 입력하세요!">
     <button onclick="clickPlus();">=</button>
-    
-    <strong id="result">0</strong>
+    <strong id="result">0</strong><br/>
+    <button onclick="clearAll()" style="margin-top: 10px;">clear</button>
     <script>
      // + 버튼을 누르면 호출 되는 함수
      //!!!!!!!!!!!!!!오타 조심 하기!!!!!!!!!!!!!
@@ -61,6 +59,12 @@
         var b = document.querySelector("#num2").value;
         var result = parseFloat(a) + parseFloat(b);
         document.querySelector("#result").innerText = result;
+    }
+
+    function clearAll(){
+        document.querySelector("#num1").value = "";
+        document.querySelector("#num2").value = null;
+        document.querySelector("#result").innerText = 0;
     }
     </script>
 </body>
