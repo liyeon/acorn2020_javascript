@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <style>
+        #console{
+            font-size: 40px;
+            font-weight: 900;
+            color : #a1baff;
+            margin-top : 80px;
+        }
+        input {
+            border : 3px solid #a1baff;
+            padding : 5px;
+            width : 150px;
+            height : 30px;
+            margin : 0;
+        }
+        input:focus{
+         outline: none;;
+        }
+        button:focus{
+            outline: none;
+        }
+        button {
+            cursor: pointer;
+            display: inline-block;
+            padding : 9px 10px;
+            background: #a1baff;
+            border: none;;
+            font-weight: bold;;
+            font-size: 20px;
+            color : #fff;
+            margin : 0;
+            position: absolute;
+            margin-left : 10px;
+            top : 86px;
+            
+        }
+        button#btnShow{
+            top : 140px;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>plain object 테스트중</h1>
+    <input type="text" id="name" placeholder="이름을 입력하세요!">
+    <input type="text" id="addr" placeholder="주소를 입력하세요!">
+    <button id="btnSave" onclick="save();">임시저장</button>
+    <button id="btnShow" onclick="show();">저장된 정보 보기</button>
+    <p id = "console"></p>
+    <script>
+        //빈 object를 페이지 로딩 시점에 만들어 둔다.
+        //하나의 오브젝트만 존재하는 것이다.
+        //이미 만들어진 값에 값만 바뀌는 것이기 때문에 하나의 오브젝트만 존재.
+        var obj = {}; //하나의 빈 박스를 만들었당 빈 박스에 네임과 addr의 값을 넣는다.
+        //임시 저장 버튼을 눌렀을 때 호출 되는 함수
+        function save(){
+            //입력한 이름과 주소를 읽어와서 obj에 저장해보세요
+            //자바스크립트에서 다루는 모든 데이터 타입을 다룰 수 있다.
+            obj.name = document.querySelector("#name").value;
+            obj.addr = document.querySelector("#addr").value;
+
+        };
+
+        //저장된 정보보기 버튼을 눌렀을 때 호출 되는 함수
+        function show(){
+            document.querySelector("#console").innerText = '이름은 ' + obj.name + '이고 주소는 ' + obj.addr + '입니다.';
+        }
+    </script>
+</body>
+</html>
