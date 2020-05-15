@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+    <h1>function type test중입니다! 3</h1>
+    <button onclick="test()">test 함수 호출하기</button>
+    <script>
+        var f1 = function(){
+            console.log("f1()호출됨");
+            //더이상 수행할수없을 때 종료 undefined를 가져감(리턴함)
+        };  
+        var f2 = function(){
+            console.log("f2() 호출됨");
+            return 999;
+            //수행하다 return이라는 값을 만날 때 numbertype 999를 가져감
+        };
+
+        var f3 = function(){
+            console.log("f3() 호출됨");
+            var msg = "안녕";
+            return msg;
+            //수행하다 return이라는 값을 만날 때 종료 string type msg를 가져감
+
+            /*함수를 호출 하는 목적
+            1.호출하고 결과값으로 뭔가를 가져오기 위해서
+            2,그냥 동작만 하고 잊어버리는 함수
+
+            document.querySelector("").value;
+            하나의 함수로 볼 수 있다.
+            */
+
+        };
+        
+        var test = function(){
+            var a = f1();// ubdefiebd
+            var b = f2();///999
+            var c = f3();//안녕
+
+            /*
+            스레드 : 눈에 보이지 않는 실행의 흐름
+            개발자도구 버튼 step into 누르면 어디로 실행되는지 볼 수 있음.
+            LOCAl : 영역은 함수안에 만들어진 지역변수 abc의 상태를 알 수 있음
+            */
+            //브레이크 포인터?
+//함수가 undefined 로 바뀌고 test();로 간다.
+        }
+    </script>
+
+</body>
+</html>

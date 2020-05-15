@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function type 테스트중입니다.</h1>
+    <script>
+        /*
+        미리 만들어진 함수를 호출하기 때문에 오류가 나지 않음
+        참조값을 이용해서 함수를 호출한다.
+        */
+        keepBeer();
+        /*
+        함수표현식
+        우선적으로 미리 만들어 지는 함수
+        실행순서가 무조건 우선이다.
+        미리 만들어 둔 것을 실행한다.
+        */
+        function keepBeer(){
+            console.log("냉장고 문을 연다");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        };
+        /*
+        함수는 아래 형식으로 쓰는게 더 좋다
+        함수 선언식
+        미리 실행되지 않고 순서대로실행된다.
+        실행순서가 와야 만들어지는 함수.
+        keep2라는 변수가 만들어지고 그 안에 함수( function)의 참조값이 만들어진다.
+        
+        */
+        
+        var keepBeer2 = function(){
+            console.log("냉장고 문을 연다");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        }
+    </script>
+</body>
+</html>
