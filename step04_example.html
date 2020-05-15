@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>step04exmaple</title>
+    <link rel="stylesheet" href="css.css"/>
 </head>
 <body>
     <h1>arry 테스트 중이라구요!!</h1>
@@ -34,8 +35,11 @@
                 //테스트로 콘솔창에 출력해보기
                 console.log(line);
                 //todo에 저장된 문자열에 현재 읽어온 할일을 이어붙이기
-                todo = todo + line;
-                document.querySelector("#console").innerText = todo;
+                todo =  todo + (i+1) + ' : ' +line + "<br/>";
+                //document.querySelector("#console").innerText = msgs.length + ':' + todo + ',';
+                document.querySelector("#console").innerHTML = todo;
+                
+                
             }
             /*디버깅 : 검사하는 것.
                 개발자도구 sources

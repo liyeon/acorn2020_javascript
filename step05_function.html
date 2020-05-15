@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step05_function</title>
+    <link rel="stylesheet" href="css.css"/>
+</head>
+<body>
+    <h1 onmouseover="keepBeer();">function type 테스트중입니다.</h1>
+    <button onclick="keepBeer();">BUTTON</button>
+    <!--keepBeer(); 해석을 하지 않으면 아무 의미도 없다.
+    호출하고 나면 undefined 타입으로 바뀐다.
+
+-->
+    <script>
+        /*
+            function type
+            - 특정 시점에 일괄 실행할 javascript를 모아 놓는 역할을 한다
+            - 특정 동작을 실행 했을 시에 작동되기를 원하는 것을 
+        */
+
+        /*함수가 만들어지는 영역을 
+            global area 라고 한다.
+            global영역에 만드는 것을 강요
+            global영역에 무언가를 만드는 것은 안좋다.
+
+        */
+        function keepBeer(){
+            //local area : 함수 안 쪽에 있는 영역
+            console.log("냉장고 문을 연다");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        };//종료되면서 값을 호출 했던 곳으로 가져간다. 어떤 값을 가져갈지 정하지 않으면 undeined를 가져간다.
+       // keepBeer(); 페이지가 로딩 될 때 저장 된다.
+    </script>
+</body>
+</html>
