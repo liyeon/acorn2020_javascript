@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width : 100px;
+        height : 100px;
+        background : yellow;
+        border : 1px solid red;
+    }
+</style>
+<body>
+    <h1>EventListener 함수 테스트중</h1>
+    <div id = "one"class="box">div</div>
+    <div id = "two"class="box">div</div>
+    <script>
+        //id가 one인 div를 click 하면 해당 div의 innerText가 "clicked"로 바뀌도록 하세요.
+        //형식 외우셈~
+
+        //페이지가 로딩됐을때 one을 클릭하면 실행된다.
+        document.querySelector("#one").addEventListener("click", function(){
+            this.innerText = "Clicked!!!";
+            //this : 이벤트가 일어난 현재 요소
+            //this는 click이벤트가 일어난 바로 그 요소의 참조값을 가리킨다.
+        });
+        document.querySelector("#two").addEventListener("click", function(){
+            this.innerText = "Clicked2!!!";
+        });
+
+    </script>
+</body>
+</html>
