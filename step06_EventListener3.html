@@ -21,13 +21,43 @@
     <div class="box">box4</div>
     <div class="box">box5</div>
     <script>
-        //클래스 명이 box인 div의 참조값을 배열에 담아오기
-        var divs = document.querySelectorAll(".box");
-        //divs배열 안에 있는 div의 참조값을 이용해서 이벤트 등록을 해서 동작하게 해보세요
+        //기본 반복문 확인
         var nums = [10, 20, 30, 40, 50, ];
         for(var i = 0; i<nums.length; i++){
             console.log(nums[i]);
         }
+/*
+객체는 사물함에 만들어짐
+div하나하나는 오브젝트이다.
+document도 웹브라우저가 만들어놓은 아주 특별한 오브젝트이다.
+document{}라고 생각하면 된다.
+함수를 선언할수있고 호출할수도있다.
+사물함 키(참조값) = key(reference)
+querySelectorAll = array
+배열을 보자마자 for문, 반복문과 연결을 시켜야 한다.
+
+zzzzz.addEventListener("event name", function(){});
+                        ----------    --------
+                        string type   function type
+                        click
+                        mouseover
+                        mousedown
+                        mousemove
+                        mouseout
+                        focus
+                        blur
+                        submit
+                        keydown
+                        keyup
+function 안에서 this는 각각의 개개인을 말한다.
+
+*/
+
+        //클래스 명이 box인 div의 참조값을 배열에 담아오기
+        var divs = document.querySelectorAll(".box");
+        //divs배열 안에 있는 div의 참조값을 이용해서 이벤트 등록을 해서 동작하게 해보세요
+
+        
         for (var i = 0; i < divs.length; i++){
             divs[i].addEventListener("click", function(){
                 this.innerText = "Clicked!!";
