@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step08_loop3</title>
+</head>
+<body>
+    <h1>반복문 while 테스트 중</h1>
+    <script>
+
+        //while문을 이용한 반복 수행
+        var names = ["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+        var count = 0;
+        // while(count<names.length){
+        //     console.log(names[count]);
+        //     count++;
+        // }
+        while(true){//외형상 무한루프 이다. true만 할 시에 탈출 조건이 필요함
+            console.log(names[count]);
+            count++; //count1 증가시키고
+            //만일 count가 존재하지 않는 인덱스라면
+            if(count==names.length){
+                break;//반복문 탈출
+            }
+        }
+        /*
+        while(true){}true일때 반복문이 돈다.false가 될 때 까지
+        for문과 동일
+        */
+        for(var i=0; i<names.length;i++){
+            console.log(names[i]);
+        }
+    </script>
+</body>
+</html>
