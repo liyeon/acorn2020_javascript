@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
-    <title>operator3</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>논리연산자테스트예제</h1>
-    <input type="text" id="height" placeholder="키를 입력하세요"/>
-    <input type="text" id="weight" placeholder="몸무게를 입력하세요"/>
-    <button id="checkBtn">놀이기구를 탈 수 있는지 확인하기</button>
-    <p id="console"></p>
+    <h1>대입연산자 테스트중</h1>
     <script>
-        /*
-            키가 너무 작거나 몸무게가 너무 크면 탈 수 없는 놀이기구가 있다.
-            키는 150 이상, 몸무게는 100미만이 기준.
-            키와 몸무게를 입력하고 확인하기 버튼을 누르면
-            해당 놀이 기구를 탈 수 있는지 없는지의 메세지를
-            p요소의 innerText에 출력하는
-        */
-        document.querySelector("#checkBtn").addEventListener("click", function(event){
-            //1.입력한 키와 몸무게를 읽어온다.
-            var hei = parseFloat(document.querySelector("#height").value);
-            var wei = parseFloat(document.querySelector("#weight").value);
-            //2. 만일 키와 몸무게가 기준에 맞으면 탈 수 있습니다를 p요소의 innerText에 출력하기
-            if(hei >= 150 && wei < 100){
-                document.querySelector("#console").innerText = "놀이기구를 탈 수 있습니다.";
-            }else{//그렇지 않는다면, 양자택일의 선택
-                document.querySelector("#console").innerText = "놀이기구를 탈 수 없습니다.";
-            }
-            // if(hei < 150 || wei > 100){
-            //     document.querySelector("#console").innerText = "놀이기구를 탈 수 없습니다.";
-            // }
-       
-        }); 
+         /*
+             3. 대입연산자
+
+             =  => 우측에 있는 값을 좌측에 대입
+             += => 우측에 있는 값을 좌측에 있는 원래 값에 더해서 대입
+             -= => 우측에 있는 값을 좌측에 있는 원래 값에 빼서 대입
+             *= => 우측에 있는 값을 좌측에 있는 원래 값에 곱해서 대입
+             /= => 우측에 있는 값을 좌측에 있는 원래 값으로 나누어서 대입
+             %= => 우측에 있을 값으로 좌측에 있는 원래 값을 나눈 나머지를 구해서 대입
+         */
+
+        var num1=100;
+
+        var num2=100;
+        //num2=num2+10;
+        num2 += 10;
+
+        var num3=100;
+        //num3=num3-10;
+        num3 -= 10;
+
+        var num4=100;
+        //num4=num4*10;
+        num4 *= 10;
+
+        var num5=100;
+        num5=num5/10;
+        num5 /= 10;
+
+        var num6=100;
+        //num6=num6%3;
+        num6 %= 3;
     </script>
 </body>
 </html>
