@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+</head>
+<body>
+    <h1>if문 테스트중</h1>
+    <p id="console">ㅇㅇ</p>
+    <script>
+        var isHungry = confirm("졸리나요?"); //자바스크립트 확인 창 띄우기
+        if(isHungry){
+            document.querySelector("#console").innerText="간식드세욤";
+        }
+        if(!isHungry){
+            document.querySelector("#console").innerText="운동하세요";
+        }
+    </script>
+</body>
+</html>

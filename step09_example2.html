@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step09_example2</title>
+</head>
+<style>
+    canvas{
+        border : 1px solid red;
+    }
+</style>
+<body>
+    <h1>그림판 만들기</h1>
+    
+    <canvas id="myCanvas" width="500" height="500">
+        
+    </canvas>
+    <div>
+        색상<input type="color" id ="selectedColor"/>
+        굵기<input type="range" id="selectedWidth" min="1" max="20" step="1" value="5" />
+        <strong id="displayWidth">5</strong>
+        <button id="clearBtn">clear</button>
+        <!--체인지 이벤트가 발생한다.
+            step : 눈금 몇씩 움직일것인지. 10씩 움직일것인지
+        -->
+    </div>
+    <!--
+        자바스크립트를 이용해 그림을 그릴 수 있다.
+    -->
+    <script>
+        //mousedown mousemove 
+        //canvas의 참조값 얻어오기
+        var canvas = document.querySelector("#myCanvas");
+        //canvas에 그림을 그릴 수 있는 도구의 참조값 얻어오기
+        var context = canvas.getContext("2d");
+        /*현재 그림을 기르고 있는 상태인지 여부를 관리할 변수를 선언하고 초기값을 부여한다.*/
+        var isDrawing=false;
+
+        //색상과 선의 굵기 초기값 지정하기
+        var thisColor="#000000";
+        var thisWidth=5;
+        //부드럽게 그려지게
+        context.lineCap="round";//선의 끝부분을 둥글게
+        context.lineJoin="round"//선의 교차점을 둥글게
+
+        document.querySelector("#myCanvas").addEventListener("mousedown", function(event){
+            //만일 현재 그리고 이쓴 상태가 아니면 함수를 여기서 종료한다.   
+            
+
+            //console.log(event);
+            var x = event.offsetX;
+            var y = event.offsetY;
+            //canvas내에서의 좌표
+            // pageX,Y//현재 페이지 내의 좌표
+            // screenX,Y//화면안에서의좌표
+            //이벤트가 일어난 좌표에서 선을 그릴 준비를ㄹ한다.
+            //해당 좌표에서 선을 그릴 준비를 한다.
+            context.beginPath();
+
+            context.strokeStyle=thisColor;//선의 색상
+            context.lineWidth=thisWidth;//선의굵기
+
+
+            
+            context.moveTo(x,y);
+            //그림을 그리고 있는 상태로 바꿔준다.
+            isDrawing=true;
+        });
+
+
+
+        document.querySelector("#myCanvas").addEventListener("mousemove", function(event){
+
+            if(!isDrawing){
+                return; //함수종료
+            }
+            context.stroke();//선 그리기
+            //이벤트가 일어난 좌표까지 선을 그린다.
+            var x = event.offsetX;
+            var y = event.offsetY;
+            //해당 좌표까지 선을 이어준다.
+
+            context.lineTo(x,y);
+            context.stroke();
+        });
+
+
+
+        document.querySelector("#myCanvas").addEventListener("mouseup", function(event){
+            isDrawing=false;
+            context.closePath();//경로 마무리
+            //더이상 선이 그려지지 않도록 한다.
+        });
+        
+        //색상을선택했을때실행할함수등록
+        document.querySelector("#selectedColor").addEventListener("change", function(){
+            //선택된 색상값을 변수에 대입하기
+            thisColor = this.value;
+        });
+
+      
+        //굵기를 바꿀 때 실행할 함수 등록
+        document.querySelector("#selectedWidth").addEventListener("input", function(){
+            //현재 value값을 테스트로 콘솔창에 출력해보기
+            //console.log(this.value);
+            //현재 색상값에 대입해서 선의 굵기에 반영되도록한다.
+            thisWidth = this.value;
+            //strong 요소에 출력
+            document.querySelector("#displayWidth").innerText = this.value;
+        });
+
+        document.querySelector("#clearBtn").addEventListener("click", function(){
+            //.clearRect (x, y, width, height)
+            context.clearRect(0, 0, 500, 500);
+            //context를 이용해서 사각형 영역 clear하기
+        });
+    </script>
+</body>
+</html>
