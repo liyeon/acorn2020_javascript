@@ -25,6 +25,9 @@
             document.querySelector("#findBtn").addEventListener("click", function(){
                 //1. 입력된 이름을 읽어온다.
                 var inputN = document.querySelector("#inputName").value;
+                //검색된 데이터가 존재하는지 여부
+                //반복문 선언을 돌다가 if에 들어왔는지 안 들어왔는지 확인할수있다. 특정조건을 바꿔서
+                var isExist = false;
                 //2. 배열(friends)에서 동일한 이름을 가지고 있는 {}을 찾는다.
                 for(var i = 0; i<friends.length; i++){
                     //i번째 방의 친구 정보를 불러와서
@@ -37,14 +40,23 @@
                         //araay 안에 들어 있는 문자열이 아니기 때문에 friends[i]는 안 나온다.
                         document.querySelector("#console").innerText = 
                         "{ name : " + fName + "," +" phone : " + fPhone +  "," +" email : " + fEmail + " }";
-                        break;
+                        //break;
+                        isExist = true;
+                        //검색된 이름이 존재한다고 표시한다.
                         //return 0; //탈출
                         //for문, 반복문을 종료시키고 내용을 출력한다.
-                    }else{
-                        document.querySelector("#console").innerText = inputN + "으로 검색된 정보가 없습니다."
-                        //return 0; //탈출
                     }
-                    
+                    // }else{
+                    //     document.querySelector("#console").innerText = inputN + "으로 검색된 정보가 없습니다."
+                    //     //return 0; //탈출
+                    // }
+                    //특정 코드 블록이 실행이 되었는지 안되었는지 체크할필요가 있다.
+                    //for문 종료 후에 if문 블럭에 실행 순서가 갔었는지 여부를 알고싶다.
+                }
+//몇개가 검색됐는지 알고 싶으면 숫자를 쓴다.
+//검색된 회원 정보를 다 넣고 싶으면 빈 array를 가져와서 검색된걸 다 push한다.
+                if(isExist==false){
+                    document.querySelector("#console").innerText =inputN + "으로 검색된 정보는 없습니다."
                 }
             });
 
