@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step11_example</title>
+</head>
+<body>
+    <h1>ECMAScript6테스트중</h1>
+    <script>
+        //plain object로 나타낸다.
+
+        class Phone{
+            //객체가 생성 될 때 호출되는 생성자
+            constructor(brand){
+                console.log("생성자가 호출됨");
+                 //생성자의 인자로 받은 값을 속성에 저장하기.
+                this.brand=brand;
+            }
+            //기능(함수)
+            call(){
+                console.log("전화를 걸어요");
+            }
+            //setter
+            set number(info){
+                this.info=info;  //값을 집어넣을 때
+            }
+            //getter
+            get number(){
+                let str="전화번호는 " + this.info+"입니다.";
+                return str;
+            }
+        }
+
+        let p1=new Phone("삼성");
+        let p2=new Phone("엘지");
+        let p3=new Phone("애플");
+
+        class Computer{
+            constructor(brand){
+                this.brand=brand;
+            }
+
+            call(){
+            console.log("컴퓨터가 안돼요");
+
+            }
+            set ggnumber(info){
+            this.info = info;
+            }
+
+            get ggnumber(){
+            let str = "컴퓨터넘버는"+this.info+"입니다.";
+            return str;
+            }
+            /*
+            c1.ggnumber = "100";
+            c1.ggnumber
+            "컴퓨터넘버는100입니다."*/
+        }
+
+        let c1=new Computer("삼성");
+        let c2=new Computer("엘지");
+        let c3=new Computer("한성");
+    </script>
+</body>
+</html>

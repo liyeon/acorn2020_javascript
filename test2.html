@@ -5,25 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    canvas{
-        border : 5px solid #000000;
-        width : 700px;
-        height : 500px;
-    }
-</style>
 <body>
-    <canvas id="myCanvas">
-
-    </canvas>
-    <div>
-        색상<input type="color" id="selectedColor" />
-        굵기<input type="range" id="selectedWidth" min="1" max="50" step="1" value="25" />
-        <strong id="displayWidth=">25</strong>
-        <button id="clearBtn">Clear</button>
-    </div>
+    <h1>반복문 활용 예제 테스트중</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름" />
+    <button id = findBtn>검색</button>
+    <p id="console"></p>
     <script>
-        
-    </script>
+        //친구 정보를 담을 배열
+        var friends = []
+        //배열에 sample 데이터 담기
+        friends.push({name:"김구라",phone:"010",email:"aaa@"});
+        friends.push({name:"빈지노",phone:"011",email:"bbb@"});
+        friends.push({name:"김동현",phone:"013",email:"ccc@"});
+        friends.push({name:"김태연",phone:"014",email:"ddd@"});
+        friends.push({name:"박시연",phone:"015",email:"fff@"});
+        //데이터베이스의 테이블 안의 셀렉트 된 하나의 로우
+            
+            var friendsList = function(){
+                //1. 입력된 이름을 읽어온다.
+                var inputN = document.querySelector("#inputName").value;
+                //2. 배열(friends)에서 동일한 이름을 가지고 있는 {}을 찾는다.
+                for(var i = 0; i<friends.length; i++){
+                    //i번째 방의 친구 정보를 불러와서
+                    var tmp = friends[i];
+                    var fName = tmp.name;
+                    var fPhone = tmp.phone;
+                    var fEmail = tmp.email;
+                    //만일 입력한 이름과 친구 정보에 있는 이름이 같으면 해당 정보를 p요소에 출력하기
+                    if(inputN == fName){
+                        //araay 안에 들어 있는 문자열이 아니기 때문에 friends[i]는 안 나온다.
+                        document.querySelector("#console").innerText = 
+                        "{ name : " + fName + "," +" phone : " + fPhone +  "," +" email : " + fEmail + " }";
+                        break;
+                        //return 0; //탈출
+                        //for문, 반복문을 종료시키고 내용을 출력한다.
+                    }else{
+                        document.querySelector("#console").innerText = inputN + "으로 검색된 정보가 없습니다."
+                        //return 0; //탈출
+                    }
+                }
+            }
+
+            //버튼을 눌렀을 때 실행할 함수 등록
+            document.querySelector("#findBtn").addEventListener("click", friendsList);
+            document.querySelector("#findBtn").addEventListener("keyup", function(event){
+                if(event.key === "Enter"){
+                    friendsList;
+                }
+
+            });
+
+
+
+         </script>
 </body>
 </html>

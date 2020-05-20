@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step11_ECMA6</title>
+</head>
+<body>
+    <h1>ECMAScript6 테스트중</h1>
+    <script>
+        /*
+            var = let
+            var 보다는 let이 좋다함..왜지/
+            var은 함수를 기준으로 영역을 나눴기에
+            특정 함수를 지정하지 않으면 다 사용 가능
+            let을 사용하면
+            범위가 블럭 단위로 나뉘어 진다.
+            블럭 안에서 선언되면 그 안에서만 사용 가능하다.
+            함수 안의 포문안에서 선언하면 그 안에서만 사용 가능하다.
+        */
+
+        //변수를 선언 할 때 let으로 선언하면 선언된 블럭 내에서만 사용 가능하다.
+        for(let i=0; i<5; i++){
+            console.log(i);
+        }//i는 for문 밖에서 사용 할 수 없다.
+        if(true){
+            let myName="김구라";
+        }//myName은 if문 밖에서 사용 할 수 없ㄷㅏ.
+
+        //상수(수정불가한 변수)도 만들 수 있다.
+        const PI=3.14159; //constant의 약자
+        //한번 기억된 값은 수정이 불가능 하다.
+        //PI = 100;//오류뜸
+        let PI=3.14; //상수로 선언한 것을 다시 선언 할 수 없다.
+
+
+/*
+        push(40);은참조값이 바뀌는 것이 아니다.
+        var nums =[10,20,30]
+        num.push(40);
+        nums=[];<-참조값이 바뀐다.ㅠ'
+
+        const nums =[10,20,30] 수정이 불가능하다.
+        num.push(40); push를 못 한다는 건 아니고 안에 들어 있는 참조값을 바꾸지 못한다.
+        nums=[];<-오류가 뜬다.
+
+        const는 안에 들어간 값이 바뀌지 않았으면 하는 값을 넣는다.
+
+
+*/
+const nums =[10,20,30] //수정이 불가능하다.
+nums.push(10);
+    </script>
+</body>
+</html>

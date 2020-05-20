@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMA6_2</title>
+</head>
+<body>
+    <h1>ECMAScript6 테스트 중</h1>
+    <script>
+        //Car 클래서 정의 하기
+        /*
+        class의 역할은 객체를 생성하는 어떠한 설계도 역할
+        객체를 생성 했을 때 어떤 저장소와 어떤 기능을 가질지에 대한 설계도
+        동일한 클래스로 객체를 만들면
+        클래스명();
+        가상의 자동차 객체를 만들것
+        객체(속성,기능)의 설계도
+
+        */
+        class Car{
+            //속성(저장소) 정의하기
+            brand="벤츠";
+            color="white";
+            //기능
+            drive(){
+                console.log(this.brand+" 가 달려요");
+            }
+
+            
+        }
+//car 클래스로 객체를 생성해서 참조값을 car1이라는 이름의 변수에 담기
+        let car1=new Car();//car1.dirve();
+        //car클래스로 객체를 생성해서 참조값을 car2라는 이름의 변수에 담기
+        let car2=new Car();
+
+        let car3 ={//똑같은 모양의 객체를 여러개 만들 때 편하다
+        //똑같은 모야의 객체를 여러 프로젝트에 사용 하고 싶을 때 사용 한다.
+            brand:"벤츠",
+            color:"red",
+            drive:function(){
+                console.log(this.brand+" 가 달려요");
+            }
+
+        };
+    </script>
+</body>
+</html>
