@@ -48,9 +48,10 @@
 
             //버튼을 눌렀을 때 실행할 함수 등록
             document.querySelector("#findBtn").addEventListener("click", friendsList);
-            document.querySelector("#findBtn").addEventListener("keyup", function(event){
+            //#inputName에서 enter를 치는거기 때문에 querySelctor에는 #findBtn이 아닌 #inputName이 들어간다.ㅇㅋㅇㅋ
+            document.querySelector("#inputName").addEventListener("keyup", function(event){
                 if(event.key === "Enter"){
-                    friendsList;
+                    friendsList();
                 }
 
             });

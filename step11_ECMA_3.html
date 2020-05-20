@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMA6</title>
+</head>
+<body>
+    <h1>ECMASCript6 테스트중입니다.</h1>
+    <button id="testBtn">테스트</button>
+    <script>
+
+        //인자로 전달되는 숫자의 제곱값을 리턴해주는 익명함수1
+        let a = function(num1){
+            return num1*num1;
+        }
+        /*
+        arrow(화살표) 함수 
+        익명함수를 arrow함수로 간단히 만들 수 있다고한다..
+            ()=>{}
+            도 함수임
+            function(){}
+            
+        */
+        //인자로 전달되는 숫자의 제곱값을 리턴해주는 익명함수2
+        let b=(num1)=>{
+            return num1*num1;
+        };
+        //인자로 전달되는 숫자의 제곱값을 리턴해주는 익명함수3
+        let c=num1=>num1*num1;//축약버전
+        //버튼을 눌렀을 때 호출되는 arrow 함수 등록하기
+        document.querySelector("#testBtn").addEventListener("click",
+        ()=>{
+            alert("버튼을 누르셨군요!");
+
+        });
+
+        const nums=[1,2,3,4,5,6,7,8,9,10];
+        //let result=nums.filter(function(item){});
+        let result = nums.filter((item)=>{
+            return item%2 == 0;
+            //filter는 뭔가를 걸러내는 것.
+            //2로 나눈 나머지를 걸러낸다.
+
+        });
+
+        let result2=nums.filter(item=>item%3==0);
+
+        nums.forEach((item, index)=>{
+            console.log(item+ "|" +index);
+        });
+
+        
+    </script>
+</body>
+</html>
