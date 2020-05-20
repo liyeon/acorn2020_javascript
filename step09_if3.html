@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if3</title>
+</head>
+<body>
+    <h1>다중 if문 테스트중</h1>
+    <button id="inputBtn">점수입력하기</button>
+    <p id="console"></p>
+    <script>
+        document.querySelector("#inputBtn").addEventListener("click", function(){
+            //입력받은 문자열을 숫자로 바꿔서 변수에 담는다.
+            var jumsu = parseFloat(prompt("점수(0~100)사이를 입력하세요"));
+            //입력받은 내용은 함수가 리턴해준다.
+            /*
+                점수가
+                90 이상이면 'A'
+                80 이상이면 'B'
+                70 이상이면 'C'
+                60 이상이면 'D'
+                60 미만이면 'F'
+                라믄 문자열을 p요소에 출력해보세요
+            */
+        //     var pSend = document.querySelector("#console");
+        //     if(jumsu >= 90){
+        //         pSend.innerText = "A등급입니다.";
+        //     }else if(jumsu >= 80){
+        //         pSend.innerText = "B등급입니다.";
+        //     }else if(jumsu >= 70){
+        //         pSend.innerText = "C등급입니다.";
+        //     }
+        //     else if(jumsu >= 60){
+        //         pSend.innerText = "D등급입니다.";
+        //     }
+        //     else{
+        //         pSend.innerText = "F등급입니다.";
+        //     }
+
+
+
+
+        var grade;
+            if(jumsu >= 90){
+                grade = "A";
+            }else if(jumsu >= 80){
+                grade = "B";
+            }else if(jumsu >= 70){
+                grade = "C";
+            }
+            else if(jumsu >= 60){
+                grade = "D";
+            }
+            else{
+                grade = "F";
+            }
+            document.querySelector("#console").innerText=grade;
+        });
+
+    </script>
+</body>
+</html>

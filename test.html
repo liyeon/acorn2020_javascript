@@ -6,22 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>EventLister 함수 테스트 중</h1>
-    <div class="box">box1</div>
-    <div class="box">box2</div>
-    <div class="box">box3</div>
-    <div class="box">box4</div>
-    <div class="box">box5</div>
+    <h1>반복문 활용 예제 테스트중</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름" />
+    <button id = findBtn>검색</button>
+    <p id="console"></p>
 
     <script>
-        //클래스 명이 box인 div의 참조값을 배열에 담아오기
-        var divs = document.querySelectorAll(".box");
-        //divs배열 안에 있는 div의 참조값을 이용해서 이벤트 등록을 해서 동작하게 해보세요
-        for(var i = 0; i < divs.length; i++){
-            divs[i].addEventListener("click", function(){
-                this.innerText = "FIRE!";
-            });
-        }
+        var friends = []
+        friends.push({name:"김태연",phone:"010-1234-5555",email:"tayeon@gmail.com"});
+        friends.push({name:"이순규",phone:"010-2323-4545",email:"sunny@gmail.com"});
+        friends.push({name:"임윤아",phone:"010-0101-4545",email:"yonn@gmail.com"});
+        friends.push({name:"권유리",phone:"010-4545-4545",email:"kwon@gmail.com"});
+        friends.push({name:"최수영",phone:"010-0084-4631",email:"soo@gmail.com"});
+        friends.push({name:"티파니",phone:"010-7894-4564",email:"tifany@gmail.com"});
+        friends.push({name:"서주현",phone:"010-0101-4545",email:"seohyun@gmail.com"});
+
+        document.querySelector("#findBtn").addEventListener("click", function(){
+            console.log(friends);
+            for(var i =0;i<friends.length; i++){
+                var inputName = document.querySelector("#inputName").value;
+                var tmp = friends[i];
+                var fName = tmp.name;
+                var fEmail = tmp.email;
+                var fPhone = tmp.phone;
+                if(inputName == fName){
+                    document.querySelector("#console").innerText = fName + fEmail + fPhone;
+                    break;
+                }else{
+                    document.querySelector("#console").innerText ="목록에 없는 이름 입니다."
+                }
+            }
+
+        });
+        
     </script>
 </body>
 </html>
