@@ -31,7 +31,7 @@
            
     //    }
 
-       names.forEach(function(item, index){
+       names.forEach((item, index)=>{
            let li = document.createElement("li");
            li.innerText = names[index];
            document.querySelector("#friendList").append(li);
