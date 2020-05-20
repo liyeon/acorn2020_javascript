@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <h1>string 타입 테스트 중입니다.</h1>
+    <script>
+        /*
+            string타입도 객체이다.
+            객체는 저장소(속성)과 기능function으로 구성된다.
+        */
+       var line="abcdef/123456/~!@#$/가나다라";
+       var size = line.length;
+       var result = line.replace("e", "EEE");
+       var result2 = line.substring(0, 5);
+       //index(0)번부터 5번이전까지의 글자를 보여준다.
+       //0~5미만의 개념을 가지고 있다.
+
+       var result3=line.split("/");
+       //split : 분리한다. /를 기준으로 array로 나누어 만들어준다.
+
+       //back tick(`) 문자를 이용해서 문자를 만들 수 있다. 여러줄이 가능하다.
+       var info = `김구라십새끼
+       원숭이 모욕하지 말란말야
+       김구라 짱시룸ㅠㅜ
+
+       `;
+
+       var myName="박시연";
+       var yourName="원숭이";
+       var info2=`나의이름:${myName}, 너의 이름:${yourName}`;
+        /*
+            객체(object)
+            heap 영역(사물함)에 만들어지는 것들
+            string타입도 객체, ㅁ
+            속성과 기능
+            1. attribute 속성
+            2.function(method)
+
+
+            모든 문자열에는 replace가 있다.
+            replace('변경할문자', '변경하고 싶은 문자')
+            substring('시작할문자', '끝날문자')
+        */
+    </script>
+</body>
+</html>
