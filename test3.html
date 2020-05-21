@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>createElement테스트중</h1>
+   <button id="sendBtn">추가</button>
+   <ul id="friendList">
+
+    </ul>
+
+    <script>
+        names = ["임윤아","김태연","김효연","서주현","황미영","최수영","권유리","이순규"];
+
+        for(let i=0; i<names.length; i++){
+            let lili = document.createElement("li");
+            lili.innerText = names[i];
+            document.querySelector("#sendBtn").addEventListener("click", ()=>{
+                document.querySelector("#friendList").append(lili);
+            });
+        }
+
+    </script>
+</body>
+</html>

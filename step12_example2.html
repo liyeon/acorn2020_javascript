@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement</title>
+    <link rel="stylesheet" href="css.css"/>
+    <style>
+        #toDoList li:hover{
+            background-color: #46b63c;
+            cursor : pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement테스트중</h1>
+    <input type="text" id="inputMsg" placeholder="할일을입력하세요!" />
+    <button id="addBtn">추가</button>
+    <ul id="toDoList">
+
+    </ul>
+    <script>
+        let toDoTable = ()=>{
+        //1.입력한 할일을 읽어온다.
+        let inputMssg = document.querySelector("#inputMsg").value;
+        //2.li요소를 만들고
+        let newLi = document.createElement("li");//버튼을 클릭 할 때마다 새로 만들어진다.
+        //3.innerText를 출력하고
+        newLi.innerText = inputMssg;
+        //4.ul요소에 append되게 한다.
+        document.querySelector("#toDoList").append(newLi);
+        document.querySelector("#inputMsg").value = "";
+        //5.만든 li 요소에 click리스너 함수 등록하기
+            newLi.addEventListener("click",function(){
+            alert("li를 클릭하셨습니다.");
+            this.remove('');
+        });
+        
+        
+        }
+
+
+
+        document.querySelector("#addBtn").addEventListener("click", toDoTable);
+
+        document.querySelector("#inputMsg").addEventListener("keyup",(event)=>{
+            if(event.key == "Enter"){
+                toDoTable();
+            }
+        });
+
+       
+    </script>
+</body>
+</html>
