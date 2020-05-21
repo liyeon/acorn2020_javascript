@@ -5,28 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css.css">
-    <style>
-        table{
-            border :1px solid #000000;
-            border-collapse :collapse ;
-        }
-        
-        table td, th{
-            border :1px solid #e74d4d; ;
-        }
-        td{
-            text-align : center;
-        }
-        th {
-            background : #ffe7e7;
-            color : #f56060;
-            padding : 10px 40px;
-        }
-        tbody > tr:hover {
-            background : #f56060;
-            cursor : pointer;
-        }
-    </style>
+
 </head>
 <body>
     <h1>createElement테스트중</h1>
@@ -51,26 +30,25 @@
  
 
         document.querySelector("#addBtn").addEventListener("click", function(){
+            //1.입력한 정보를 읽어와서
            let inputNum = document.querySelector("#inputNum").value;
            let inputName = document.querySelector("#inputName").value;
            let inputAddr = document.querySelector("#inputAddr").value;
-        
-           document.querySelector("#inputNum").value = "";
-           document.querySelector("#inputName").value = "";
-           document.querySelector("#inputAddr").value = "";     
+           //2. td요소 3개를 만들어서innerText에 출력하고
+           
            let td1 = document.createElement("td");
            td1.innerText = inputNum;
            let td2 = document.createElement("td");
            td2.innerText = inputName;
            let td3 = document.createElement("td");
            td3.innerText = inputAddr;
-
+           //3..tr요소를 1개 만들어서 td를 append하고
            let tr = document.createElement("tr");
 
            tr.append(td1);
            tr.append(td2);
            tr.append(td3);
-            
+            //4.tbody요소에 tr요소를 append한다.
            document.querySelector("tbody").append(tr);
 
 
@@ -80,14 +58,16 @@
         //            this.innerText = "";
         //        }
         //    });
-
+        //5.tr을 클릭 했을 때 실행할함수 등록
            tr.addEventListener("click", function(){
                let trDelete = confirm("삭제하시겠습니까?");
                if(trDelete){
                    this.remove();
                }//if의 종료
            });//tr 클릭의 종료
-           
+           document.querySelector("#inputNum").value = "";
+           document.querySelector("#inputName").value = "";
+           document.querySelector("#inputAddr").value = "";     
         });//addBtn 클릭의 종료
         
     </script>
