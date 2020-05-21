@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto.html</title>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <p id="console"></p>
+
+    
+    <script>
+        /*
+        랜덤한 기본 오브젝트 Math
+        Math.random
+        0~1사이의 랜덤한 실수를 리턴해준다.
+        parseInt(Math.random()*10); : 0~9 사이의 랜덤한 정수
+        parseInt(Math.random()*10)+1 1~10 사이의 랜덤한 정수
+        parseInt(Math.random()*45)+1 1~45 사이의 랜덤한 실수
+        */
+        //1~45 사이의 랜덤한 정수 얻어내는 방법
+        //로또 번호 6개를 랜덤하기 얻어내서 nums배열에 저장해보세요.
+        var nums = [];
+        while(true){
+            let lottoNum=parseInt(Math.random()*45)+1;
+            //만일 중복된 값이 없을 때
+           if(nums.indexOf(lottoNum) == -1){
+               //배열에 로또 번호를 넣어준다.
+               nums.push(lottoNum);
+            }
+            //만일 nums에 6개의 숫자가 모두 들어갔다면 반복문 탈출
+            //while문을 사용 할 때 특정조건을 멈출 때 break
+            if(nums.length==6){break;}
+        }
+        //배열에 무언가를 어떻게 저장하냐구
+        //nums.push(11);
+        //로또 번호 하나는 어떻게 얻어내징
+        //var lottoNum=parseInt(Math.random()*45)+1;
+        //로또 번호는 6개가 나와야해!6개 어떻게 넣냐ㅜ
+
+        //2. nums배열에 저장된 숫자를 p요소에 순서대로 출력해보세요
+        //배열에 저장된 값을 순서대로 참조는 어떻게 하지
+        let line=""
+        for(let i =0; i<nums.length;i++){
+            //참조된 내용을 어떤 형식으로 모두 누적은 어떻게 하징..
+            line = line + nums[i]+" ";
+        }
+
+        /*
+            배열에  없으면indexOf가 -1이다.
+            -1일때 넣어야 한다.
+            반복문이 몇번 돌아야 될 지 모를 때는 while 문이 편하다ㅏ.
+        */
+        //p 요소에 문자열은 어떻게 출력하나요?
+        document.querySelector("#console").innerText=line;
+        
+    </script>
+</body>
+</html>

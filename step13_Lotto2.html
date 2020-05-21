@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+    <style>
+        body{
+            margin : 0 auto;text-align: center;
+        }
+        div img {
+            width : 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <button id="roulette">추첨하기</button>
+    <div id="wrapper">
+        
+    </div>
+    
+    
+    <script>
+        document.querySelector("#roulette").addEventListener("click", function (){
+            //div 안을 빈 상태로 만들기
+            document.querySelector("#wrapper").innerText="";
+           
+            var nums = [];
+        while(true){
+            let lottoNum=parseInt(Math.random()*45)+1;
+            if(nums.indexOf(lottoNum) == -1){
+               nums.push(lottoNum);
+            }//if종료
+
+            if(nums.length==6){break;}
+
+        }//while종료
+        
+        //배열에 저장된 숫자 오름차순 정렬
+        nums.sort(function(a, b){
+            return a-b; //오름차순 정렬
+        });
+
+        for(let i=0; i<nums.length; i++){
+            //nums 배열에 있는 숫자를 이용해서 img 요소 만들기
+            let ball = document.createElement("img");
+            ball.setAttribute("src", "images/lotto-ball-"+nums[i]+".png");
+            //#wrapper div에 추가하기
+            document.querySelector("#wrapper").append(ball);
+            
+        }//for문 종료
+        
+        
+        });//#roulette click 종료
+        
+               
+        
+        
+
+        /*
+        `images/lotto-ball-${nums[0]}.png`
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 연습</title>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <button id="roulette">추첨하기</button>
+    <div id="wrapper">
+        
+    </div>
+    <script>
+        var nums =[];
+        while(true){
+            let lottoNum = parseInt(Math.random()*45)+1;
+            //만일 중복된 값이 없을 때
+
+            /*
+                indexOf에서 배열에 없으면 -1이 뜨기 때문에
+                -1이면 push를 한다는 소리
+            */
+            if(nums.indexOf(lottoNum)==-1){
+                nums.push(lottoNum);
+            }
+            //만일 nums에 6개의 숫자가 모두 들어간다면 반복문 탈출
+            //while문을 사용 할 때 특정 조건을 멈출 때 break
+            if(nums.length==7){
+                break;
+            }
+            
+            let line = ""
+            for(let i=0; i<nums.length;i++){
+                //참조된 내용을 어떤 형식으로 누적할지.
+                //숫자 사이에 띄어쓰기
+                line=line+nums[i]+" ";
+            }
+            nums.sort(function(a,b){
+                return a-b;
+            });
+            document.querySelector("#wrapper").innerText=line;
+        }
+    </script>
+</body>
+</html>
