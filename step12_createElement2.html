@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement2</title>
+</head>
+<body>
+    <h1>createElement테스트 중입니다!</h1>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        /*
+            <a href="hello.html" class="my-link">이동하기</a>
+            위와 같은 구조의 a요소를 동적으로 만들기
+            참조값을 얻어내서 변수에 담고
+            3가지 작업을 했ㅇ다;
+            setAttribute("속성", ""): 요소 안에 속성 추가하기
+        */
+        let newLink = document.createElement("a");
+        newLink.innerText = "이동하기";
+        newLink.setAttribute("href", "hello.html");
+        newLink.setAttribute("class", "my-link");
+
+        //div의 자식 요소로 추가하기!!
+        document.querySelector("#wrapper").append(newLink);
+        /*
+            setInterval 이라는 기본 함수
+            원하는 주기 마다 함수를 호출 할 수 있다.
+            function타입과 number타입, 두가지 타입을 전달한다.
+        */
+        setInterval(function(){
+            console.log("함수가 호출됩니다!");
+
+        }, 1000);//1000 = 1초
+
+    </script>
+</body>
+</html>
