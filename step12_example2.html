@@ -22,18 +22,21 @@
     <script>
         let toDoTable = ()=>{
         //1.입력한 할일을 읽어온다.
-        let inputMssg = document.querySelector("#inputMsg").value;
+        let inputMsg = document.querySelector("#inputMsg");
         //2.li요소를 만들고
         let newLi = document.createElement("li");//버튼을 클릭 할 때마다 새로 만들어진다.
         //3.innerText를 출력하고
-        newLi.innerText = inputMssg;
+        newLi.innerText = inputMsg.value;
         //4.ul요소에 append되게 한다.
         document.querySelector("#toDoList").append(newLi);
-        document.querySelector("#inputMsg").value = "";
+        inputMsg.value = "";
         //5.만든 li 요소에 click리스너 함수 등록하기
             newLi.addEventListener("click",function(){
-            alert("li를 클릭하셨습니다.");
-            this.remove('');
+            let isDelete = confirm("선택한 li를 삭제하시겠습니까?");
+                
+            if(isDelete){
+                this.remove('');
+            }
         });
         
         
