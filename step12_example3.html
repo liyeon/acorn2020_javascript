@@ -48,7 +48,9 @@
         </tbody>
     </table>
     <script>
-        let tableList = ()=>{
+ 
+
+        document.querySelector("#addBtn").addEventListener("click", function(){
            let inputNum = document.querySelector("#inputNum").value;
            let inputName = document.querySelector("#inputName").value;
            let inputAddr = document.querySelector("#inputAddr").value;
@@ -79,36 +81,15 @@
         //        }
         //    });
 
-
-        //    td2.addEventListener("click", function(){
-        //        let trDelete = confirm("이름을 삭제하시겠습니까?");
-        //        if(trDelete){
-        //            this.innerText = "";
-        //        }
-        //    });
-
-        //    td3.addEventListener("click", function(){
-        //        let trDelete = confirm("주소를 삭제하시겠습니까?");
-        //        if(trDelete){
-        //            this.innerText = "";
-        //        }
-        //    });
-
            tr.addEventListener("click", function(){
                let trDelete = confirm("삭제하시겠습니까?");
                if(trDelete){
                    this.remove();
-               }
-           });
+               }//if의 종료
+           });//tr 클릭의 종료
            
-        }
-
-        document.querySelector("#addBtn").addEventListener("click", tableList);
-        document.querySelector("#inputAddr").addEventListener("keyup", (event)=>{
-            if(event.key == "Enter"){
-                tableList();
-            }
-        });
+        });//addBtn 클릭의 종료
+        
     </script>
 </body>
 </html>
