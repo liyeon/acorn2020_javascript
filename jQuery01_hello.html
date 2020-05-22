@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryHello</title>
+    <!--외부 javascript 로딩하기!-->
+    <script src="js/my_util.js"></script>
+    <script src ="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <h1>jQuery TEXT</h1>
+    <button id="changeBtn">Change!</button>
+    <button id="changeBtn2">Change!(jQuery활용)</button>
+    <p id="one"></p>
+    <p id="two"></p>
+    <script>
+        select("#changeBtn").addEventListener("click", function(){
+            select("#one").innerText = "김태연";
+            select("#two").innerText = "해골쓰";
+        })
+
+        // function select(sel){
+        //     return document.querySelector(sel);
+        // }/*
+        // select 라는 함수를 만들어 안에서 ㅇ용하면서 return해준다.
+        // 유틸리티 편리하게 쓸 수 있게 미리 만들어진것.
+        // */
+
+        /*jQuery를 활용해서 버튼을 클릭했을 때 실행할함수등록*/
+        $("#changeBtn2").on("click", function(){
+            //jQuery 를 활용해서 innerText 넣어주기
+            $("#one").text("김구라");
+            $("#two").text("해골");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery_$</title>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div id="one">div1</div>
+    <div id="two" class="my-class">div2</div>
+    <div class="my-class">div3</div>
+    <div class="my-class">div4</div>
+    <div>div5</div>
+    <script>
+        // //모든 div의 참조값이 들어있는 배열
+        // var divs=document.querySelectorAll("div");
+        // //모든 div의 innerText를 "김구라로 바꿔주려면"
+        // for(var i=0; i<divs.length; i++){
+        //     divs[i].innerText="김구라";
+        // }
+
+//위와 같은 동작을 jQuery를 이용하면 아래와 같다.
+        $("div").text("김구라");
+        
+        
+        
+        /*$의 함수는 배열의 참조값?함수를 리턴해준다.
+        배열의 각각의 방에는 문서객체의 참조값이 들어있는 것
+
+        $ = 선택자로써 쓰인다.
+        외형상 배열이지ㅏㅁㄴ 제이쿼ㅣㄹ의 뱅 
+    제이쿼리의 기능이 합쳐진 배열
+    $().action();
+    $(selector).action().action2()..
+    반복문 안 돌아도됨
+    동작은 배열에 리턴됨
+    배열에 있는 모든 문서객체에 대해 리턴, 영향을 받는다..
+        */
+    </script>
+</body>
+</html>
