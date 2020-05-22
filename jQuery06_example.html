@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery06_example</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        li {
+            margin-top : 10px;
+        }
+        li > button {
+            width : 50px;
+            height : 50px;
+            background : #a1baff;
+            font-weight: 900;
+            border-radius: 100%;;
+            font-size : 15px;
+            color : #fff;
+            border : none;
+        
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery 예제</h1>
+    <input type="text" id="inputMsg"/>
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+
+    </ul>
+    <script>
+
+        var liTable = function(){
+            //입력한 문자열을 읽어온다.
+            let msg = $("#inputMsg").val();
+            let btn = $("<button>").text("x");
+            //li요소를 만들어서 msg를 출력하고 #msgList에 추가하기
+            $("<li>").text(msg).append(btn).appendTo("#msgList");
+            //입력창 지우기!
+            $("#inputMsg").val("").focus();
+            $(btn).on("click", function(){
+                $(this).parent().remove();//이벤트가 발생한 버튼의 부모 li
+            });
+        }
+
+
+
+
+        //추가 버튼을 눌렀을 때 실행할 함수 등록
+        $("#addBtn").on("click", liTable);
+
+        $("#inputMsg").keyup(function(event){
+            if(event.key == "Enter"){
+            $(liTable);
+            }//if
+        });//keyup 종료
+    </script>
+</body>
+</html>
