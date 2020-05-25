@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .row > div{
+            border : 1px dotted green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>이미지 출력하기</h2>
+        <div class="row">  
+            <div class="col-3"><img class="img-fluid" src="images/image5.png"/></div>
+            <div class="col-3"><img class="img-fluid" src="images/image2.png" /></div>
+            <div class="col-3"><img class="img-fluid" src="images/image3.png" /></div>
+            <div class="col-3"><img class="img-fluid" src="images/image4.png" /></div>
+        </div>
+        <h2>이미지 출력하기2</h2>
+        <div class="row">  
+            <div class="col"><img class="img-fluid" src="images/image5.png"/></div>
+            <div class="col"><img class="img-fluid" src="images/image2.png" /></div>
+            <div class="col"><img class="img-fluid" src="images/image3.png" /></div>
+            <div class="col"><img class="img-fluid" src="images/image4.png" /></div>
+        </div>
+        <h2>이미지 출력하기3</h2>
+        <div class="row">  
+            <div class="col-sm-6 col-md-3"><img class="img-fluid" src="images/image5.png"/></div>
+            <div class="col-sm-6 col-md-3"><img class="img-fluid" src="images/image2.png" /></div>
+            <div class="col-sm-6 col-md-3"><img class="img-fluid" src="images/image3.png" /></div>
+            <div class="col-sm-6 col-md-3"><img class="img-fluid" src="images/image4.png" /></div>
+        </div>
+
+        <!-- 
+            576px 이상 sm 크기면 6grid //한 화면에 두개씩, 768px이상인 md 크기면 3grid 한 화면에 4개씩
+            .col-sm-6{width : 50%;}
+            .col-md-3{width : 25%;}
+            12개 기준임....
+
+         -->
+         <h2>이미지 출력하기4</h2>
+        <div class="row">  
+            <div class="col"><img class="img-fluid" src="images/image5.png"/></div>
+            <div class="col-6"><img class="img-fluid" src="https://brillante1.files.wordpress.com/2013/09/img_7009.jpg" /></div>
+            <div class="col"><img class="img-fluid" src="images/image4.png" /></div>
+        </div>
+
+        
+    </div>
+
+    <h2>이미지 출력하기5</h2>
+    <!-- 
+        px : padding의 x축 위치 (padding의 left와 right)
+        py : padding의 y축의 위치 (padding의 top과 bottom)
+        my : margin의 y축 위치 
+        mx : margin의 x축 위치
+        mx-lg-n5 : -값 n5는 -3rem
+        1rem = 16px;
+        1 -> 0.25rem -> 4px
+        2 -> 0.5rem  -> 8px
+        3 -> 1rem    -> 16px
+        4 -> 1.5rem  -> 24px
+        5 -> 3rem    -> 48px
+    -->
+        <div class="container px-lg-5">  
+            <div class="row mx">
+                <div class="col"><img class="img-fluid" src="images/image5.png"/></div>
+                <div class="col-6"><img class="img-fluid" src="https://post-phinf.pstatic.net/MjAyMDA0MjhfMTIz/MDAxNTg4MDU4ODUwODQ1.sJYuPx5Y9jQ7HUafsznizcNYDO9-WEzOARX9ra1vtfUg.LT4F8dQDVYN-hYex5gcjqQFGpNa_Rh1vgEo9n6IPbQAg.JPEG/image_9422086261588058824500.jpg" /></div>
+                <div class="col"><img class="img-fluid" src="images/image4.png" /></div>
+        </div>
+        </div>
+</body>
+</html>
