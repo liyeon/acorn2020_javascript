@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--css 로딩-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--jQuery 로딩-->
+    <script src="js/jquery-3.5.1.js"></script>
+    <!--jQuery plugin로딩-->
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .row > div{
+            border : 1px dotted #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>GridSystem TEst</h1>
+        <h2>모든 영역에 대해서 1:1:1의 폭을 가진다.</h2>
+        <div class="row">
+        <div class="col">1칼럼</div>
+        <div class="col">2칼럼</div>
+        <div class="col">3칼럼</div>
+        </div>
+        <div class="row">
+            <div class="col-4">1칼럼</div>
+            <div class="col-4">2칼럼</div>
+            <div class="col-4">4칸씩 3개로 나눠 가지셈</div>
+            </div>
+        <h2>sm 영역(576px) 이상에 대해서 1:1:1의 폭을 가진다.</h2>
+    <div class="row">
+        <div class="col-sm">1칼럼</div>
+        <div class="col-sm">2칼럼</div>
+        <div class="col-sm">3칼럼</div>
+    </div>
+
+</div><!-- container 종료 -->
+<div class="container">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    </div>
+  
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+    <div class="row">
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    </div>
+  
+    <!-- Columns are always 50% wide, on mobile and desktop -->
+    <div class="row">
+      <div class="col-6">.col-6</div>
+      <div class="col-6">.col-6</div>
+    </div>
+  </div>
+  <div class="jumbotron text-center">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Column 1</h3>
+        <p>Lorem ipsum dolor..</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Column 2</h3>
+        <p>Lorem ipsum dolor..</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Column 3</h3>
+        <p>Lorem ipsum dolor..</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
