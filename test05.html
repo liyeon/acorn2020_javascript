@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="startbtn">작업시작</button>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div id="one"></div>
+    <script>
+        
+        document.querySelector("#startbtn").addEventListener("click", function(){
+            var items=["강아지","고양이","원숭이","코끼리","돌고래",];
+            for(var i=0; i<items.length;i++){
+                var tmp = items[i];
+                console.log(tmp);
+                console.log("hello");//콘솔창에 
+                var divs = document.querySelectorAll("div");//querySelectorAll은 배열임
+                divs[i].innerText = items[i];
+            }
+            
+            
+            var imgSend = document.createElement("img");
+            imgSend.setAttribute("src","images/5.jpg");
+            document.querySelector("#one").append(imgSend);
+
+        });
+
+
+       
+
+
+    </script>
+</body>
+</html>
