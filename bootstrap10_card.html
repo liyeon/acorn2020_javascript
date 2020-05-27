@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap card</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container-md">
+        <h1>기본 card</h1>
+        <div class="card mb-3">
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem dolore ducimus dolores veritatis hic deleniti est, quae, blanditiis exercitationem repellendus sapiente expedita minima repudiandae? Eius sint quidem architecto distinctio.
+            </div><!--card-body종료-->
+        </div><!--card종료-->
+        <div class="row">
+            <div class="col-sm mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-primary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem dolore ducimus dolores veritatis hic deleniti est, quae, blanditiis exercitationem repellendus sapiente expedita minima repudiandae? Eius sint quidem architecto distinctio.
+                    </div><!--card-body종료-->
+                </div><!--card종료-->
+            </div><!--col종료-->
+            <div class="col-sm">
+                <div class="card shadow">
+                    <div class="card-body text-danger">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem dolore ducimus dolores veritatis hic deleniti est, quae, blanditiis exercitationem repellendus sapiente expedita minima repudiandae? Eius sint quidem architecto distinctio.
+                    </div><!--card-body종료-->
+                </div><!--card종료-->
+            </div><!--col종료-->
+        </div>
+        <h1>card header 와 footer</h1>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">header</div>
+                    <div class="card-body">body</div>
+                    <div class="card-footer">footer</div>
+                </div><!--card종료-->
+            </div><!--col종료-->
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Android</h2>
+                    </div><!--card-header종료-->
+                    <div class="card-body">
+                        <p>운영체제가 Android입니다.</p>
+                    </div><!--card-body종료-->
+                    <div class="card-footer">
+                        <a href="javascript:void(0);" class="btn btn-success">구입하기</a>
+                    </div><!--card-footer종료-->
+                </div><!--card종료-->
+            </div><!--col종료-->
+        </div><!--row종료-->
+        <h1>card이미지</h1>
+        <div class="row mb-5">
+            <div class="col-sm">
+                <div class="card">
+                    <img src="https://t1.daumcdn.net/cfile/tistory/994F5D4C5C97724D19" alt="" class="card-img-top w-100"/>
+                    <div class="card-body">
+                        <h4 class="card-title">소녀시대</h3>
+                        <p class="card-text">하앙 탱구 사랑행</p>
+                        <a href="javascript:void(0);" class="btn btn-info">Profile</a>
+                    </div>
+                </div><!--card종료-->
+            </div><!--col종료-->
+            <div class="col-sm">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h4 class="card-title">소녀시대</h3>
+                        <p class="card-text">하앙 탱구 사랑행</p>
+                        <a href="javascript:void(0);" class="btn btn-success stretched-link">Profile</a>
+                        <!-- stretched-link 버튼이 아닌 전체가 하나의 링크가 된다. -->
+                    </div>
+                    <img src="https://t1.daumcdn.net/cfile/tistory/9989F1435C9772540E?original" alt="" class="card-img-bottom w-100"/>
+                </div><!--card종료-->
+            </div><!--col종료-->
+
+            <div class="col-md">
+                <div class="card">
+                    <img src="https://t1.daumcdn.net/cfile/tistory/997030445DA695AC2B?original" alt="" class="card-img-bottom w-100"/>
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">소녀시대</h3>
+                        <p class="card-text">하앙 탱구 사랑행</p>
+                        <a href="javascript:void(0);" class="btn btn-warning text-light stretched-link">Profile</a>
+                        <!-- stretched-link 버튼이 아닌 전체가 하나의 링크가 된다. -->
+                    </div>
+                </div><!--card종료-->
+            </div><!--col종료-->
+        </div><!--row종료-->
+
+    </div><!--container종료-->
+</body>
+</html>
